@@ -34,6 +34,12 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       });
       sendResponse({ success: true });
       return false;
+
+    case 'resetSettings':
+      initializeDefaultSettings()
+        .then(() => sendResponse({ success: true }))
+        .catch((err) => sendResponse({ error: err.message }));
+      return true;
     
     default:
       sendResponse({ error: 'Unknown action' });

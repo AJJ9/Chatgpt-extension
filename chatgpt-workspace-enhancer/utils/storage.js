@@ -215,3 +215,4 @@ class StorageManager {
 
 // Export as singleton
 const storageManager = new StorageManager();
+window.storageManager = storageManager;

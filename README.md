@@ -71,7 +71,7 @@ A lightweight, fully client-side browser extension designed to transform the sta
 
 ## Usage
 
-After installation, navigate to [chat.openai.com](https://chat.openai.com) and the extension will automatically activate.
+After installation, navigate to [chatgpt.com](https://chatgpt.com) and the extension will automatically activate.
 
 ### Keyboard Shortcuts
 

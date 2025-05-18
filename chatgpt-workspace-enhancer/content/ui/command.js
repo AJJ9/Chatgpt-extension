@@ -479,18 +479,17 @@ class CommandPalette {
         break;
         
       case 'toggle-theme':
-        // This is just a placeholder - actual implementation would depend on ChatGPT's theme toggle
-        alert('Theme toggle functionality coming soon');
+        document.documentElement.classList.toggle('dark');
         break;
-        
+
       case 'export-chat':
-        // This is just a placeholder - actual implementation would be in the export module
-        alert('Export functionality coming soon');
+        if (window.exportManager) {
+          window.exportManager.exportChatAsPdf();
+        }
         break;
-        
+
       case 'open-settings':
-        // This is just a placeholder - actual implementation would open the settings modal
-        alert('Settings functionality coming soon');
+        chrome.runtime.openOptionsPage();
         break;
         
       default:

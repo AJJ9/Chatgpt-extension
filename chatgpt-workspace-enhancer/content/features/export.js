@@ -247,8 +247,14 @@ class ExportManager {
    * @param {HTMLElement} messageElement - Message element
    */
   exportMessageAsPdf(messageElement) {
-    // This is a placeholder - in a real implementation, we would use a PDF generation library
-    alert('PDF export functionality coming soon');
+    const html = messageElement.outerHTML;
+    const win = window.open('', '_blank');
+    if (!win) return;
+    win.document.write(`<html><head><title>Chat Message</title></head><body>${html}</body></html>`);
+    win.document.close();
+    win.focus();
+    win.print();
+    win.close();
   }
 
   /**
@@ -294,8 +300,16 @@ class ExportManager {
    * Export entire chat as PDF
    */
   exportChatAsPdf() {
-    // This is a placeholder - in a real implementation, we would use a PDF generation library
-    alert('Full chat PDF export functionality coming soon');
+    const chatContainer = document.querySelector('main div.flex-1');
+    if (!chatContainer) return;
+    const html = chatContainer.innerHTML;
+    const win = window.open('', '_blank');
+    if (!win) return;
+    win.document.write(`<html><head><title>Chat Export</title></head><body>${html}</body></html>`);
+    win.document.close();
+    win.focus();
+    win.print();
+    win.close();
   }
 }
 

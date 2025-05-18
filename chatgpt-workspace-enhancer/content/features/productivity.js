@@ -317,7 +317,7 @@ class ProductivityManager {
       const { settings } = await storageManager.getSettings();
       if (settings) {
         settings.scratchPad = this.scratchPadContent;
-        await storageManager.saveSettings({ settings }, null);
+        await storageManager.saveSettings(settings, null);
       }
     } catch (error) {
       console.error('Error saving scratch pad content:', error);
