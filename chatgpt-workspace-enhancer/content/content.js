@@ -86,20 +86,7 @@
    * Initialize IndexedDB storage
    */
   async function initializeStorage() {
-    // This will be implemented in storage.js
-    // For now, we'll just log a placeholder
-    console.log('Storage initialization placeholder');
-    
-    // Mock data for development
-    state.folders = [
-      { folderId: 'folder1', name: 'Work', color: '#ff5733', order: 0 },
-      { folderId: 'folder2', name: 'Personal', color: '#33ff57', order: 1 }
-    ];
-    
-    state.tags = [
-      { tagId: 'tag1', name: 'Important', color: '#ff3333' },
-      { tagId: 'tag2', name: 'Research', color: '#3333ff' }
-    ];
+    await storageManager.initialize();
   }
 
   /**
@@ -161,26 +148,19 @@
    * Initialize UI components
    */
   function initializeUI() {
-    // This will initialize all UI components
-    // Each component will be in its own module in the ui/ directory
-    
-    // For now, we'll just add a simple indicator to show the extension is active
-    const indicator = document.createElement('div');
-    indicator.id = 'chatgpt-enhancer-indicator';
-    indicator.textContent = 'ChatGPT Workspace Enhancer Active';
-    indicator.style.position = 'fixed';
-    indicator.style.bottom = '10px';
-    indicator.style.right = '10px';
-    indicator.style.padding = '5px 10px';
-    indicator.style.backgroundColor = state.theme === 'dark' ? '#2a2a2a' : '#f0f0f0';
-    indicator.style.color = state.theme === 'dark' ? '#ffffff' : '#333333';
-    indicator.style.borderRadius = '4px';
-    indicator.style.fontSize = '12px';
-    indicator.style.zIndex = '9999';
-    document.body.appendChild(indicator);
-    
-    // Initialize sidebar enhancements (placeholder)
-    console.log('UI initialization placeholder');
+    window.enhancedSidebar = new EnhancedSidebar();
+    window.enhancedEditor = new EnhancedEditor();
+    window.commandPalette = new CommandPalette();
+    window.productivityManager = new ProductivityManager();
+    window.organizationManager = new OrganizationManager();
+    window.exportManager = new ExportManager();
+
+    window.enhancedSidebar.initialize();
+    window.enhancedEditor.initialize();
+    window.commandPalette.initialize();
+    window.productivityManager.initialize();
+    window.organizationManager.initialize();
+    window.exportManager.initialize();
   }
 
   /**
@@ -210,9 +190,9 @@
    * Open command palette
    */
   function openCommandPalette() {
-    console.log('Command palette placeholder');
-    // This will be implemented in command.js
-    alert('Command Palette (Coming Soon)');
+    if (window.commandPalette) {
+      window.commandPalette.toggle();
+    }
   }
 
   /**

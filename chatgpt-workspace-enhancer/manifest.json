@@ -21,7 +21,17 @@
   "content_scripts": [
     {
       "matches": ["https://chat.openai.com/*"],
-      "js": ["content/content.js"],
+      "js": [
+        "content/utils/dom.js",
+        "utils/storage.js",
+        "content/ui/sidebar.js",
+        "content/ui/editor.js",
+        "content/ui/command.js",
+        "content/features/organization.js",
+        "content/features/productivity.js",
+        "content/features/export.js",
+        "content/content.js"
+      ],
       "css": ["assets/css/common.css"]
     }
   ],
