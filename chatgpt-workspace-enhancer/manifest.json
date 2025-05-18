@@ -1,0 +1,58 @@
+{
+  "manifest_version": 3,
+  "name": "ChatGPT Workspace Enhancer",
+  "version": "1.0.0",
+  "description": "Transform the standard ChatGPT interface into a structured, insight-rich, and highly productive environment",
+  "icons": {
+    "16": "assets/icons/icon16.png",
+    "48": "assets/icons/icon48.png",
+    "128": "assets/icons/icon128.png"
+  },
+  "permissions": [
+    "storage",
+    "unlimitedStorage"
+  ],
+  "host_permissions": [
+    "https://chat.openai.com/*"
+  ],
+  "background": {
+    "service_worker": "background/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://chat.openai.com/*"],
+      "js": ["content/content.js"],
+      "css": ["assets/css/common.css"]
+    }
+  ],
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/css/*",
+        "assets/icons/*",
+        "lib/*"
+      ],
+      "matches": ["https://chat.openai.com/*"]
+    }
+  ],
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+E",
+        "mac": "Command+Shift+E"
+      },
+      "description": "Toggle ChatGPT Workspace Enhancer"
+    },
+    "open_command_palette": {
+      "suggested_key": {
+        "default": "Ctrl+K",
+        "mac": "Command+K"
+      },
+      "description": "Open Command Palette"
+    }
+  }
+}

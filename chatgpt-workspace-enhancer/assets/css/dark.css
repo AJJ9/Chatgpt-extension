@@ -1,0 +1,192 @@
+/* Dark theme styles for ChatGPT Workspace Enhancer */
+
+/* Dark theme variables */
+:root {
+  --chatgpt-enhancer-bg-primary: #2a2a2a;
+  --chatgpt-enhancer-bg-secondary: #333333;
+  --chatgpt-enhancer-bg-tertiary: #444444;
+  --chatgpt-enhancer-text-primary: #ffffff;
+  --chatgpt-enhancer-text-secondary: rgba(255, 255, 255, 0.7);
+  --chatgpt-enhancer-text-tertiary: rgba(255, 255, 255, 0.5);
+  --chatgpt-enhancer-border: rgba(255, 255, 255, 0.1);
+  --chatgpt-enhancer-accent: #10a37f;
+  --chatgpt-enhancer-accent-hover: #0d8c6d;
+  --chatgpt-enhancer-error: #f44336;
+  --chatgpt-enhancer-warning: #ff9800;
+  --chatgpt-enhancer-success: #4caf50;
+  --chatgpt-enhancer-shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* Modal styles */
+.chatgpt-enhancer-modal-content {
+  background-color: var(--chatgpt-enhancer-bg-primary);
+  color: var(--chatgpt-enhancer-text-primary);
+}
+
+.chatgpt-enhancer-modal-header {
+  border-bottom: 1px solid var(--chatgpt-enhancer-border);
+}
+
+.chatgpt-enhancer-modal-close {
+  color: var(--chatgpt-enhancer-text-secondary);
+}
+
+.chatgpt-enhancer-modal-close:hover {
+  color: var(--chatgpt-enhancer-text-primary);
+}
+
+.chatgpt-enhancer-modal-footer {
+  border-top: 1px solid var(--chatgpt-enhancer-border);
+}
+
+/* Button styles */
+.chatgpt-enhancer-button {
+  background-color: var(--chatgpt-enhancer-bg-tertiary);
+  color: var(--chatgpt-enhancer-text-primary);
+}
+
+.chatgpt-enhancer-button:hover {
+  background-color: var(--chatgpt-enhancer-bg-secondary);
+}
+
+.chatgpt-enhancer-button-primary {
+  background-color: var(--chatgpt-enhancer-accent);
+  color: white;
+}
+
+.chatgpt-enhancer-button-primary:hover {
+  background-color: var(--chatgpt-enhancer-accent-hover);
+}
+
+.chatgpt-enhancer-button-danger {
+  background-color: var(--chatgpt-enhancer-error);
+  color: white;
+}
+
+.chatgpt-enhancer-button-danger:hover {
+  background-color: #d32f2f;
+}
+
+/* Form styles */
+.chatgpt-enhancer-form-input {
+  background-color: var(--chatgpt-enhancer-bg-secondary);
+  color: var(--chatgpt-enhancer-text-primary);
+  border: 1px solid var(--chatgpt-enhancer-border);
+}
+
+.chatgpt-enhancer-form-input:focus {
+  border-color: var(--chatgpt-enhancer-accent);
+  outline: none;
+}
+
+.chatgpt-enhancer-form-select {
+  background-color: var(--chatgpt-enhancer-bg-secondary);
+  color: var(--chatgpt-enhancer-text-primary);
+  border: 1px solid var(--chatgpt-enhancer-border);
+}
+
+.chatgpt-enhancer-form-select:focus {
+  border-color: var(--chatgpt-enhancer-accent);
+  outline: none;
+}
+
+/* Sidebar enhancements */
+.chatgpt-enhancer-folder {
+  background-color: var(--chatgpt-enhancer-bg-primary);
+  color: var(--chatgpt-enhancer-text-primary);
+}
+
+.chatgpt-enhancer-folder:hover {
+  background-color: var(--chatgpt-enhancer-bg-secondary);
+}
+
+.chatgpt-enhancer-search-input {
+  background-color: var(--chatgpt-enhancer-bg-secondary);
+  color: var(--chatgpt-enhancer-text-primary);
+  border: 1px solid var(--chatgpt-enhancer-border);
+}
+
+.chatgpt-enhancer-search-input:focus {
+  border-color: var(--chatgpt-enhancer-accent);
+  outline: none;
+}
+
+/* Editor enhancements */
+.chatgpt-enhancer-editor {
+  background-color: var(--chatgpt-enhancer-bg-secondary);
+  color: var(--chatgpt-enhancer-text-primary);
+}
+
+.chatgpt-enhancer-editor:focus {
+  background-color: rgba(255, 255, 255, 0.07);
+}
+
+.chatgpt-enhancer-token-counter {
+  color: var(--chatgpt-enhancer-text-tertiary);
+}
+
+.chatgpt-enhancer-token-counter.warning {
+  color: var(--chatgpt-enhancer-warning);
+}
+
+.chatgpt-enhancer-token-counter.danger {
+  color: var(--chatgpt-enhancer-error);
+}
+
+/* Command palette */
+.chatgpt-enhancer-command-item {
+  background-color: var(--chatgpt-enhancer-bg-primary);
+  color: var(--chatgpt-enhancer-text-primary);
+}
+
+.chatgpt-enhancer-command-item:hover,
+.chatgpt-enhancer-command-item.selected {
+  background-color: var(--chatgpt-enhancer-bg-secondary);
+}
+
+.chatgpt-enhancer-command-category {
+  color: var(--chatgpt-enhancer-text-tertiary);
+}
+
+.chatgpt-enhancer-command-description {
+  color: var(--chatgpt-enhancer-text-secondary);
+}
+
+/* Status bar */
+#chatgpt-enhancer-status-bar {
+  background-color: var(--chatgpt-enhancer-bg-secondary);
+  border-top: 1px solid var(--chatgpt-enhancer-border);
+}
+
+.chatgpt-enhancer-status-item {
+  color: var(--chatgpt-enhancer-text-secondary);
+}
+
+/* Scratch pad */
+#chatgpt-enhancer-scratch-pad-container {
+  background-color: var(--chatgpt-enhancer-bg-primary);
+  box-shadow: -2px 0 10px var(--chatgpt-enhancer-shadow);
+}
+
+#chatgpt-enhancer-scratch-pad-container > div {
+  border-bottom: 1px solid var(--chatgpt-enhancer-border);
+}
+
+#chatgpt-enhancer-scratch-pad {
+  background-color: var(--chatgpt-enhancer-bg-primary);
+  color: var(--chatgpt-enhancer-text-primary);
+}
+
+#chatgpt-enhancer-scratch-pad-toggle {
+  background-color: var(--chatgpt-enhancer-accent);
+}
+
+/* Export buttons */
+.chatgpt-enhancer-export-button {
+  background-color: var(--chatgpt-enhancer-bg-secondary);
+  color: var(--chatgpt-enhancer-text-secondary);
+}
+
+.chatgpt-enhancer-export-button:hover {
+  background-color: var(--chatgpt-enhancer-bg-tertiary);
+}
