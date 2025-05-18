@@ -289,16 +289,37 @@ class EnhancedSidebar {
     
     pinnedSection.appendChild(sectionTitle);
     
-    // Add pinned chats (placeholder for now)
-    const placeholder = DOMUtils.createElement('div', {
-      style: {
-        padding: '8px',
-        fontSize: '14px',
-        color: 'rgba(0, 0, 0, 0.5)'
-      }
-    }, 'No pinned chats');
-    
-    pinnedSection.appendChild(placeholder);
+    if (this.pinnedChats.length > 0) {
+      const prefix = window.location.pathname.split('/c/')[0];
+      this.pinnedChats.forEach(chatId => {
+        const chatLink = DOMUtils.createElement('a', {
+          href: `${prefix}/c/${chatId}`,
+          class: 'chatgpt-enhancer-pinned-chat',
+          style: { textDecoration: 'none', color: 'inherit' }
+        });
+
+        const pinIcon = DOMUtils.createElement('span', {
+          class: 'chatgpt-enhancer-pin-icon'
+        }, '📌');
+
+        const title = DOMUtils.createElement('span', {}, chatId);
+
+        chatLink.appendChild(pinIcon);
+        chatLink.appendChild(title);
+
+        pinnedSection.appendChild(chatLink);
+      });
+    } else {
+      const placeholder = DOMUtils.createElement('div', {
+        style: {
+          padding: '8px',
+          fontSize: '14px',
+          color: 'rgba(0, 0, 0, 0.5)'
+        }
+      }, 'No pinned chats');
+
+      pinnedSection.appendChild(placeholder);
+    }
     
     // Insert after the folder section
     const folderSection = this.sidebarElement.querySelector('.chatgpt-enhancer-section');
@@ -332,8 +353,16 @@ class EnhancedSidebar {
    * @param {string} query - Search query
    */
   handleSearch(query) {
-    console.log('Search query:', query);
-    // This will be implemented with the search functionality
+    const chatLinks = this.sidebarElement.querySelectorAll('a[href*="/c/"]');
+
+    chatLinks.forEach(link => {
+      const text = link.textContent.toLowerCase();
+      if (text.includes(query.toLowerCase())) {
+        link.style.display = '';
+      } else {
+        link.style.display = 'none';
+      }
+    });
   }
 
   /**
